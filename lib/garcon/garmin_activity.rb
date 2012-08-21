@@ -8,6 +8,10 @@ class GarminActivity
     @activity["activityId"]
   end
   alias :id :activity_id
+
+  def activity_url
+    "http://connect.garmin.com/activity/#{@activity["activityId"]}"
+  end
   
   def activity_summary_begin_timestamp
     @activity["activitySummaryBeginTimestamp"]["display"] if @activity.has_key?("activitySummaryBeginTimestamp")
