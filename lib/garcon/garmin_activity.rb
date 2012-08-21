@@ -38,10 +38,10 @@ class GarminActivity
   end
   alias :distance :activity_summary_sum_distance
 
-  def activity_summary_sum_elapsed_duration
-    @activity["activitySummarySumElapsedDuration"]["value"] if @activity.has_key?("activitySummarySumElapsedDuration")
+  def activity_summary_sum_duration
+    @activity["activitySummarySumDuration"]["display"] if @activity.has_key?("activitySummarySumDuration")
   end
-  alias :duration :activity_summary_sum_elapsed_duration
+  alias :duration :activity_summary_sum_duration
 
   def activity_summary_weighted_mean_heart_rate
     @activity["activitySummaryWeightedMeanHeartRate"]["value"] if @activity.has_key?("activitySummaryWeightedMeanHeartRate")
