@@ -19,15 +19,15 @@ class Garcon
     
     page = @agent.submit(form, form.buttons.first)
     success = page.inspect =~ /Dashboard for/ ? true : false
-    puts "Loggin in user '#{@username}' #{success ? "successful" : "failed"}."
+    puts "Login of user '#{@username}' #{success ? "successful" : "failed"}."
     success
   end
           
   def activities
     @activities = []
 
-    puts "Getting list of activities."
-
+    puts "Getting list of activities..."
+    
     # get a list of all activities
     activitiy_json = @agent.get('https://connect.garmin.com/proxy/activity-search-service-1.1/json/activities?limit=100')
     results = JSON.parse(activitiy_json.body)["results"]

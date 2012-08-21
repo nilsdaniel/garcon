@@ -10,32 +10,32 @@ class GarminActivity
   alias :id :activity_id
   
   def activity_summary_begin_timestamp
-    @activity["activitySummaryBeginTimestamp"]["display"]
+    @activity["activitySummaryBeginTimestamp"]["display"] if @activity.has_key?("activitySummaryBeginTimestamp")
   end
   alias :date :activity_summary_begin_timestamp
   
   def activity_type
-    @activity["activityType"]["key"]
+    @activity["activityType"]["key"] if @activity.has_key?("activityType")
   end
   alias :type :activity_type
   
   def activity_name
-    @activity["activityName"]["value"]
+    @activity["activityName"]["value"] if @activity.has_key?("activityName")
   end
   alias :title :activity_name  
 
   def activity_description
-    @activity["activityDescription"]["value"]
+    @activity["activityDescription"]["value"] if @activity.has_key?("activityDescription")
   end
   alias :description :activity_description
 
   def activity_summary_sum_distance
-    @activity["activitySummarySumDistance"]["value"]
+    @activity["activitySummarySumDistance"]["value"] if @activity.has_key?("activitySummarySumDistance")
   end
   alias :distance :activity_summary_sum_distance
 
   def activity_summary_sum_elapsed_duration
-    @activity["activitySummarySumElapsedDuration"]["value"]
+    @activity["activitySummarySumElapsedDuration"]["value"] if @activity.has_key?("activitySummarySumElapsedDuration")
   end
   alias :duration :activity_summary_sum_elapsed_duration
 
